@@ -1,0 +1,19 @@
+{
+  "name": "cex-v2",
+  "version": "1.0.0",
+  "description": "Mini Centralized Exchange with Redis-based Backend-Engine Communication",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "engine"
+  ],
+  "scripts": {
+    "dev:backend": "cd backend && bun run dev",
+    "dev:engine": "cd engine && bun run dev",
+    "dev": "concurrently \"bun run dev:backend\" \"bun run dev:engine\"",
+    "install:all": "bun install && cd backend && bun install && cd ../engine && bun install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
